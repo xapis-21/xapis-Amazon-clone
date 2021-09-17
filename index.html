@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- TAILWINDCSS LIBRARY -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- LOCAL STYLESHEET -->
+    <link rel="stylesheet" href="style.css">
+    <title>xapis|Amazon-clone</title>
+</head>
+<body>
+    <header class="sticky top-0 z-50 bg-gray-900 h-20 flex justify-between items-center">
+        <img src="images\amazon_PNG6-whit-01-01.png" alt="" class="header_logo cursor-pointer h-9 object-contain mr-20 ml-4">
+
+        <form class="header_search flex w-full">
+            <input class='w-full rounded-l-lg py-1 pl-4 pr-4 text-right focus:outline-none font-semibold' type="text" name="" id="search" placeholder="Search product">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 bg-yellow-600 rounded-r-lg p-2 box-content" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+        </form>
+
+        <div class="header_options flex justify-around box-content ml-10  w-80 ">
+            <div class="header_option flex flex-col text-white box-content">
+                <span class="text-xs">Hello Guest</span>
+                <span class="text-sm font-bold">Sign In</span>
+            </div>
+
+            <div class="header_option flex flex-col text-white">
+                <span class="text-xs">Returns</span>
+                <span class="text-sm font-bold">& Orders</span>
+            </div>
+        </div>
+
+        <div class="header_basket_option cursor-pointer hover:bg-yellow-500 flex m-4 text-white bg-yellow-600 p-4 rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span><small id='basket_count'>0</small></span>
+        </div>
+    </header> 
+
+    <div class="home-container mx-auto relative">
+        <div class="categories sticky top-20  bg-yellow-600 flex justify-center py-2 items-center z-50">
+            <h1 class="text-gray-900 font-bold text-lg">CATEGORIES:</h1>
+            <button
+                class="active bg-gray-900 text-yellow-600 rounded-lg p-2 px-4 font-semibold ml-4 hover:bg-gray-700 focus:bg-white duration-100 focus:text-gray-900">All</button>
+            <button
+                class="bg-gray-900 text-yellow-600 rounded-lg p-2 px-4 font-semibold ml-4 hover:bg-gray-700 focus:bg-white duration-100 focus:text-gray-900">Electronics</button>
+            <button
+                class="bg-gray-900 text-yellow-600 rounded-lg p-2 px-4 font-semibold ml-4 hover:bg-gray-700 focus:bg-white duration-100 focus:text-gray-900">Fashion</button>
+            <button
+                class="bg-gray-900 text-yellow-600 rounded-lg p-2 px-4 font-semibold ml-4 hover:bg-gray-700 focus:bg-yellow-500 duration-100 focus:text-gray-900">Food & health</button>
+        </div>
+ 
+        <div class="hero-slider  mx-auto flex overflow-x-hidden relative">
+            <img id='first-hero-slide'class='active' src="https://m.media-amazon.com/images/I/61DUO0NqyyL._SX3000_.jpg" alt="">
+            <img src="https://m.media-amazon.com/images/I/711Y9Al9RNL._SX3000_.jpg" alt="">
+            <img src="https://m.media-amazon.com/images/I/51SawtSe3JL._SX1500_.jpg" alt="">
+            <img src="https://m.media-amazon.com/images/I/71qid7QFWJL._SX3000_.jpg" alt="">
+        </div>
+
+        <div id='products_container'class="products  mx-auto flex w-full justify-center flex-wrap z-50">
+             <!-- <div class='product w-80 shadow-2xl pt-4 relative z-50'>
+                <img class='h-40 m-auto' src=https://m.media-amazon.com/images/I/61HeM-Q0BML._AC_UY218_.jpg alt=""/>
+                <h1 class='font-semibold text-left mt-2 text-lg px-4'>Lorem hey ipsum dolor sit amet consectetur adipisicing elit. Pariatur illum ullam facilis animi quibusdam neque.</h1>
+               <div class="rate_price flex justify-between my-4 px-4">
+                <p class='font-light text-gray-500 text-center'>⭐⭐⭐⭐</p>
+                    <p class="font-bold text-2xl">$<span>1000</span></p>
+               </div>
+               <button class="w-full left-0 bottom-0 text-lg font-semibold p-2 bg-yellow-600">Add to Basket</button>
+            </div>  -->
+        </div>
+<div class="count-total bg-gray-900 rounded-lg z-20 fixed">
+    <h1 class="text-xl p-2 pr-8 flex items-center font-semibold justify-between text-white">Number of products: <span id="total-items"
+            class="text-2xl font-bold text-yellow-600 ml-2">0</span></h1>
+    
+    <h1 class="text-xl p-1 mb-4 flex items-center font-semibold justify-between text-white">Payment option: <span
+            class="text-lg font-bold text-yellow-600 ml-2">Pay on delivery</span></h1>
+    <h1
+        class="px-4 pr-8 total flex items-center font-semibold justify-between bg-yellow-600 text-2xl flex w-full h-20 items-center font-semibold text-white">
+        TOTAL: <span id='total_price'class="text-2xl font-bold text-gray-900 ml-2">0</span>
+    </h1>
+</div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
